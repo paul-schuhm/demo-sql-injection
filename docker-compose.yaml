@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  # La base de données relationnelle (ici SGBD MySQL)
+  db:
+    image: mysql:8
+    restart: always
+    environment:
+      - MYSQL_DATABASE=mydb
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      - ./init/:/docker-entrypoint-initdb.d/
+      - ./dbdata:/var/lib/mysql
+    ports:
+      - ${HOST_PORT_DB}:3306
+    container_name: ${PROJECT_NAME}-db
+
+  adminer:
+    image: adminer
+    restart: always
+    depends_on:
+      - db
+    container_name: ${PROJECT_NAME}-adminer
+    ports:
+      - ${HOST_PORT_ADMINER}:8080
