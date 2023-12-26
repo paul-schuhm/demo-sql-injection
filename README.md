@@ -2,6 +2,7 @@
 
 ![](assets/exploits_of_a_mom.png)
 
+> Source : [Exploits of a Mom](https://xkcd.com/327/)
 
 ## Références
 
