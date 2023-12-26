@@ -13,6 +13,7 @@
   - [Qu'est ce qu'une injection SQL ?](#quest-ce-quune-injection-sql-)
   - [Commentaires](#commentaires)
   - [Références](#références)
+  - [Références (système de la démo)](#références-système-de-la-démo)
 
 
 ## Contenu de la démo
@@ -71,4 +72,8 @@ Une injection SQL **est donc une attaque qui vise les clients** d'un serveur de 
 - [Exploits of a Mom](https://xkcd.com/327/), comic strip d'xkcd sur l'injection SQL
 - [Running an SQL Injection Attack - Computerphile ](https://www.youtube.com/watch?v=ciNHn38EyRc), un bon exposé de ce qu'est une injection SQL accompagné d'une démonstration, dont la démo présente s'inspire fortement
 - [Client Programming Security Guidelines MySQL, documentation officielle](https://dev.mysql.com/doc/refman/5.7/en/secure-client-programming.html), un ensemble de règles/conseils de sécurité à suivre pour les clients MySQL (vrai pour d'autres SBGDR)
+- [Don’t try to sanitize input. Escape output.](https://benhoyt.com/writings/dont-sanitize-do-escape/), très bon article de [Ben Hoyt](https://benhoyt.com/cv/) indiquant en quoi l'*échappement* est bien souvent une meilleure stratégie que la *sanitization* pour préserver la sécurité de son système.
+
+## Références (système de la démo)
+
 - [MySQL Docker Image, quick reference](https://hub.docker.com/_/mysql/)
