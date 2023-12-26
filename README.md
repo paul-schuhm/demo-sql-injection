@@ -5,21 +5,49 @@
 > Source : [Exploits of a Mom](https://xkcd.com/327/)
 
 - [Démo injection SQL](#démo-injection-sql)
-  - [Installation](#installation)
+  - [Contenu de la démo](#contenu-de-la-démo)
   - [Lancer la démo](#lancer-la-démo)
+    - [Prérequis](#prérequis)
+    - [Instructions](#instructions)
+  - [Utiliser la démo](#utiliser-la-démo)
   - [Qu'est ce qu'une injection SQL ?](#quest-ce-quune-injection-sql-)
   - [Commentaires](#commentaires)
   - [Références](#références)
 
 
-## Installation
+## Contenu de la démo
 
-Prérequis :
+Cette démonstration contient un système complet divisé en trois modules :
 
-- PHP8+
-- MySQL ou Docker et Docker Compose
+- Une application cliente web écrite en PHP. C'est elle qui exposera les failles de sécurité permettant l'injection SQL
+- Une base de données relationnelle MySQL, hébergée sur un conteneur Docker
+- Un client graphique [Adminer](https://www.adminer.org/), pour inspecter la base de données avec une interface graphique (optionnel)
+
+Le système sera compromis via l'exploitation de faille de sécurité présente dans l'application cliente.
 
 ## Lancer la démo
+
+### Prérequis
+
+Les programmes suivants doivent être installés sur la machine hôte :
+
+- git
+- PHP8+
+- [Docker](https://www.docker.com/get-started/) et [(Docker)Compose](https://docs.docker.com/compose/)
+
+### Instructions
+
+1. Cloner le dépôt.
+2. Créer un fichier .env à partir du fichier .env.dist
+~~~bash
+cp .env.dist .env
+~~~
+3. Lancer le conteneur qui héberge la base de données MySQL (et le conteneur Adminer)
+~~~bash
+docker-compose up -d
+~~~
+
+## Utiliser la démo
 
 
 ## Qu'est ce qu'une injection SQL ?
@@ -43,3 +71,4 @@ Une injection SQL **est donc une attaque qui vise les clients** d'un serveur de 
 - [Exploits of a Mom](https://xkcd.com/327/), comic strip d'xkcd sur l'injection SQL
 - [Running an SQL Injection Attack - Computerphile ](https://www.youtube.com/watch?v=ciNHn38EyRc), un bon exposé de ce qu'est une injection SQL accompagné d'une démonstration, dont la démo présente s'inspire fortement
 - [Client Programming Security Guidelines MySQL, documentation officielle](https://dev.mysql.com/doc/refman/5.7/en/secure-client-programming.html), un ensemble de règles/conseils de sécurité à suivre pour les clients MySQL (vrai pour d'autres SBGDR)
+- [MySQL Docker Image, quick reference](https://hub.docker.com/_/mysql/)
