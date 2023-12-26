@@ -32,6 +32,9 @@ Une *injection SQL* désigne un ensemble de méthodes d'**exploitation de faille
 
 Comment fonctionne l'injection ? En insérant des caractères spéciaux permettant de briser la logique de la requête SQL initiale. En effet, une requête SQL est une séquence de caractères alphanumériques interprétée par le serveur de base de données. Il est donc possible de transformer une requête *dynamiquement* en y insérant les bons caractères au bon endroit.
 
+Une injection SQL **est donc une attaque qui vise les clients** d'un serveur de base de données. C'est au niveau du client de la base de données, le plus souvent une application web, que la faille est exploitée s'il y'en a. Si l'application cliente ne prend pas des précautions pour se prémunir de telles attaques, elle met en péril le système tout entier, car la base de données est le coeur du système d'information attaqué.
+
+
 ## Commentaires
 
 
